@@ -8,8 +8,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Lihuel's Portfolio</title>
       </Head>
-      {/*Header*/}
-      <Header />
+      <Header/>
+
       {/*Hero*/}
       {/*About*/}
       {/*Experience*/}
