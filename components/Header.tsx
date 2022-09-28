@@ -24,7 +24,7 @@ function Header() {
         <SocialIcon
           url="https://narrativaslab.itch.io/"
           fgColor="gray"
-          bgColor="white"
+          bgColor="#242424"
         />
         <SocialIcon
           url="https://www.linkedin.com/in/lihuel-almada/"
