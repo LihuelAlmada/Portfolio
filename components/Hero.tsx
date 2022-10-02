@@ -7,8 +7,8 @@ import BackgroundCircles from "./BackgroundCircles";
 function Hero() {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, The Name's Lihuel Almada",
-      "Guy-who-loves-coffee.tsx",
+      "Hi, my name is Lihuel Almada",
+      "Guy-who-loves-play-piano.tsx",
       "<ButLovesToCodeMore />",
     ],
     loop: true,

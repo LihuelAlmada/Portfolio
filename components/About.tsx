@@ -32,15 +32,15 @@ function BackgroundCircles({}: Props) {
       />
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
-          Here is a {""}
-          <span className="underline decoration-[#F7AB0A]/50">little</span> {""}
-          background
+         You may not {""}
+          <span className="underline decoration-[#F7AB0A]/50">know</span> {""}
+          but
         </h4>
         <p className="text-base">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-          beatae deleniti voluptatem suscipit soluta iste! Incidunt porro autem
-          eum aliquam quidem reiciendis, illo doloremque soluta similique,
-          laboriosam veniam dignissimos sit!
+          My areas of expertise are web and mobile development. I'm also very
+          passionate about teaching, and luckily, I had and continue to have the
+          opportunity of being a teaching assistant at one of my former
+          college's classes. I also play piano 🎹 and do sports 🎾
         </p>
       </div>
     </motion.div>
