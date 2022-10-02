@@ -1,29 +1,52 @@
+import Link from "next/link";
 import React from "react";
-import { Cursor, useTypewriter} from 'react-simple-typewriter'
-import BackgroundCircles from './BackgroundCircles'
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import BackgroundCircles from "./BackgroundCircles";
+//import image from 'next'
 
 function Hero() {
   const [text, count] = useTypewriter({
-    words: ["Hi, The Name's Lihuel Almada",
-            "Guy-who-loves-coffee.tsx",
-            "<ButLovesToCodeMore />",
-  ],
-  loop: true,
-  delaySpeed: 2000,
-  })
+    words: [
+      "Hi, The Name's Lihuel Almada",
+      "Guy-who-loves-coffee.tsx",
+      "<ButLovesToCodeMore />",
+    ],
+    loop: true,
+    delaySpeed: 2000,
+  });
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
       <img
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src="https://lh3.googleusercontent.com/GtRYBjGDFoHrrFj83I3zcSc7JEW9e5p3heKb8z8zCgPDkb6SkeGjZeYw9szKfLHIrgPUNCgkpTSekJApcwJR9bN_d-BpX7iPM57gHmlGpvI6yFSvtHSYp8sDmIq53s0mqQ=w1280"
+        src="https://media-exp1.licdn.com/dms/image/C4D03AQF26LYC6KtHYA/profile-displayphoto-shrink_800_800/0/1636391899518?e=1669852800&v=beta&t=U1klX9sOI77NcCR8YRmGR2GerrD6vtI4-oyfTlRyAzw"
         alt=""
-        />
-      <h1>
-      <span>{text}</span>
-      <Cursor cursorColor="#F7AB0A" />
-      </h1>
+      />
+
+      <div className="z-20 ">
+        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
+          Sistem Engineer
+        </h2>
+        <h1 className="text-5xl lg:text-6xl font-semibold px-10">
+          <span className="mr-3">{text}</span>
+          <Cursor cursorColor="#F7AB0A" />
+        </h1>
+        <div className="pt-5">
+          <Link href='#about'>
+            <button className="heroButton">About</button>
+          </Link>
+          <Link href='#experience'>
+            <button className="heroButton">Experience</button>
+          </Link>
+          <Link href='#skills'>
+            <button className="heroButton">Skills</button>
+          </Link>
+          <Link href='#projects'>
+            <button className="heroButton">Projects</button>
+          </Link>
+        </div>
+      </div>
     </div>
-  )
-  }
+  );
+}
 export default Hero;
