@@ -19,13 +19,13 @@ function Hero() {
       <BackgroundCircles />
       <img
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src="https://media-exp1.licdn.com/dms/image/C4D03AQF26LYC6KtHYA/profile-displayphoto-shrink_800_800/0/1636391899518?e=1669852800&v=beta&t=U1klX9sOI77NcCR8YRmGR2GerrD6vtI4-oyfTlRyAzw"
+        src="https://media-exp1.licdn.com/dms/image/C4D03AQF26LYC6KtHYA/profile-displayphoto-shrink_800_800/0/1636391899518?e=1675900800&v=beta&t=vHv54Ktdj7jNJnuSTlEhZDsew9gxyzgeSfM77nHbpb4"
         alt=""
       />
 
       <div className="z-20 ">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Sistem Engineer
+          System Engineer
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
