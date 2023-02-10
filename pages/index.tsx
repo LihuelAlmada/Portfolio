@@ -10,7 +10,7 @@ import ContactMe from '../components/ContactMe'
 import Link from 'next/link'
 import { Experience, PageInfo, Project, Skill, Social } from '../typings'
 import { fetchPageInfo } from '../utils/fetchPageInfo';
-import { fetchExperiences } from '../utils/fetchExperience';
+import { fetchExperiences } from '../utils/fetchExperiences';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchSocials } from '../utils/fetchSocials';
@@ -28,7 +28,7 @@ const Home = ( { experiences, pageInfo, projects, skills, socials }:Props) => {
       <Head>
         <title>Lihuel's Portfolio</title>
       </Head>
-      <Header/>
+      <Header socials={socials}/>
       <section id="hero" className='snap-start'>
         <Hero />
       </section>
@@ -80,6 +80,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       skills,
       socials,
-    }
+    },
+    revalidate: 1000,
   }
 }

@@ -8,8 +8,6 @@ export const fetchProjects = async() => {
 
   //console.log("fetching", projects);
 
-
   return projects;
-
 
 } 

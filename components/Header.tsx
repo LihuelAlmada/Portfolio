@@ -2,8 +2,12 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Social } from "../typings";
 
-function Header() {
+type Props = {
+  socials:     Social[],
+}
+function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -22,21 +26,14 @@ function Header() {
         }}
         className="flex flex-row items-center"
       >
+      {socials.map((social) => (
         <SocialIcon
-          url="https://narrativaslab.itch.io/"
+          key={social._id}
+          url={social.url}
           fgColor="gray"
-          bgColor="#242424"
+          bgColor={social.title = 'narrativaslab'? "#242424":"transparent"}
         />
-        <SocialIcon
-          url="https://www.linkedin.com/in/lihuel-almada/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://github.com/LihuelAlmada"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+      ))}
       </motion.div>
 
       <Link href="#contact">

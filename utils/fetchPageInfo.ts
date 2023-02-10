@@ -8,8 +8,6 @@ export const fetchPageInfo= async() => {
 
   //console.log("fetching", pageInfo);
 
-
   return pageInfo;
-
 
 } 
