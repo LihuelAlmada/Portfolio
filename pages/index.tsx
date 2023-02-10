@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
@@ -8,8 +8,21 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import ContactMe from '../components/ContactMe'
 import Link from 'next/link'
+import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+import { fetchPageInfo } from '../utils/fetchPageInfo';
+import { fetchExperiences } from '../utils/fetchExperience';
+import { fetchProjects } from '../utils/fetchProjects';
+import { fetchSkills } from '../utils/fetchSkills';
+import { fetchSocials } from '../utils/fetchSocials';
 
-const Home: NextPage = () => {
+type Props = {
+  experiences: Experience[],
+  pageInfo:   PageInfo,
+  projects:    Project[],
+  skills:      Skill[],
+  socials:     Social[],
+}
+const Home = ( { experiences, pageInfo, projects, skills, socials }:Props) => {
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
       <Head>
@@ -50,4 +63,23 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Home;
+
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const experiences: Experience[] = await fetchExperiences();
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const projects: Project[] = await fetchProjects();
+  const skills: Skill[] = await fetchSkills();
+  const socials: Social[] = await fetchSocials();
+
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      projects,
+      skills,
+      socials,
+    }
+  }
+}
