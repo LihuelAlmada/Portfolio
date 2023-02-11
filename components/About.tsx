@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from '../sanity';
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo,
+}
 
-function BackgroundCircles({}: Props) {
+function BackgroundCircles({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{
@@ -27,7 +31,7 @@ function BackgroundCircles({}: Props) {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        src="https://lh3.googleusercontent.com/FrtsNXGi0haeognC0WxMbQ28JSxnLI7uN3DIlCiVb4I7KvEU3uDVZ2icaclhDhZgXNSFdW2JlUSH2RD18nSUz7dJwHB3A_lwKC1F3AvFYEV4bWYNCFMBYVVZkSYLd4ZCO1Fu0sKBk2rv9CSpWT6Qgg"
+        src={urlFor(pageInfo?.profilePic).url()}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
       />
       <div className="space-y-10 px-0 md:px-10">
@@ -37,10 +41,7 @@ function BackgroundCircles({}: Props) {
           but
         </h4>
         <p className="text-base">
-          My areas of expertise are web and mobile development. I'm also very
-          passionate about teaching, and luckily, I had and continue to have the
-          opportunity of being a teaching assistant at one of my former
-          college's classes. I also play piano 🎹 and do sports 🎾
+          {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>

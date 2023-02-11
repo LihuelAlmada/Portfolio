@@ -1,11 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Skill as SkillType } from '../typings';
+import { urlFor } from '../sanity';
 
 type Props = {
+  skill: SkillType;
   directionLeft?: boolean
 }
 
-export default function Skill({ directionLeft }: Props) {
+export default function Skill({ skill, directionLeft }: Props) {
   return (
     <div className='group relative flex cursor-pointer'>
       <motion.img
@@ -15,7 +18,7 @@ export default function Skill({ directionLeft }: Props) {
       }}
       transition={{ duration: 1}}
       whileInView={{ opacity: 1, x: 0}}
-      src="https://www.gstatic.com/devrel-devsite/prod/v24d520161c9661e427a3f6fa9973bfca56d0972dca82fa8ef65c709d915e80f3/firebase/images/touchicon-180.png"
+      src={urlFor(skill?.image).url()}
       className='rounded-full border border-gray-500 object-cover w-24 h-24 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out'
       />
       <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white h-24 w-24 xl:w-32 xl:h-32 rounded-full z-0'>
